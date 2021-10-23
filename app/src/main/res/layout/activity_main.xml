@@ -88,7 +88,7 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
-                    android:src="@mipmap/ic_launcher"
+                    android:src="@drawable/baseline_credit_card_black_48dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -115,7 +115,6 @@
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="2345"
                         android:textColor="@color/black"
                         android:textSize="18sp"
                         android:textStyle="normal" />
@@ -130,7 +129,6 @@
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="4567"
                         android:inputType = "textPassword"
                         android:textColor="@color/black"
                         android:textSize="18sp"
@@ -147,7 +145,7 @@
                         android:layout_weight="1"
                         android:inputType = "textPassword"
                         android:gravity="center"
-                        android:text="4567"
+
                         android:textColor="@color/black"
                         android:textSize="18sp"
                         android:textStyle="normal" />
@@ -162,7 +160,6 @@
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="4566"
                         android:textColor="@color/black"
                         android:textSize="18sp"
                         android:textStyle="normal" />

@@ -166,6 +166,10 @@ class MainActivity : AppCompatActivity() {
                 binding.edtCardMonth.error = "Card cvv not valid"
                 false
             }
+            cardMonthInput.toInt() !in 1..12 -> {
+                binding.edtCardMonth.error = "Card month not valid month"
+                false
+            }
             else -> {
                 binding.edtCardMonth.error = null
                 true

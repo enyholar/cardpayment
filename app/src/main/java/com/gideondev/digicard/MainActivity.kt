@@ -30,27 +30,44 @@ class MainActivity : AppCompatActivity() {
             override fun onTextChanged(s: CharSequence, start: Int,
                                        before: Int, count: Int) {
                 if(s.length == 4){
-                    binding.txtFirstFourDigit.text = s.substring(0, 4);
+                    binding.txtFirstFourDigit.text = s.substring(0, 4)
+                }else if(s.length < 4){
+                    binding.txtFirstFourDigit.text = null
+
                 }
 
-                if(s.length == 8){
-                    binding.txtSecondFourDigit.text = s.substring(4, 8);
+                if(s.length == 8) {
+                    binding.txtSecondFourDigit.text = s.substring(4, 8)
+                }else if (s.length <= 4 && s.length < 8){
+                    binding.txtSecondFourDigit.text = null
                 }
 
                 if(s.length == 12){
-                    binding.txtThirdFourDigit.text = s.substring(8, 12);
+                    binding.txtThirdFourDigit.text = s.substring(8, 12)
+                }else if (s.length <= 9 && s.length < 12){
+                    binding.txtThirdFourDigit.text = null
                 }
 
                 if(s.length == 16){
-                    binding.txtFrFourDigit.text = s.substring(12, 16);
+                    binding.txtFrFourDigit.text = s.substring(12, 16)
+                }else if (s.length <= 13 && s.length < 16){
+                    binding.txtFrFourDigit.text = null
                 }
             }
         })
     }
 
     val positiveButtonClick = { dialog: DialogInterface, which: Int ->
-        Toast.makeText(applicationContext,
-            "Yes", Toast.LENGTH_SHORT).show()
+        binding.edtCardNumber.text = null
+        binding.edtCardMonth.text = null
+        binding.edtCardName.text = null
+        binding.edtCardYear.text = null
+        binding.edtCardCvv.text = null
+        binding.txtFrFourDigit.text = ""
+        binding.txtSecondFourDigit.text = ""
+        binding.txtFirstFourDigit.text = ""
+        binding.txtThirdFourDigit.text = ""
+
     }
 
     fun successAlert(view: View) {
@@ -135,12 +152,12 @@ class MainActivity : AppCompatActivity() {
                 false
             }
             cardYearInput.length > 2 -> {
-                binding.edtCardYear.error = "Card Year not valid"
+                binding.edtCardYear.error = "Card expiry Year not valid"
                 false
             }
 
             cardYearInput.length < 2 -> {
-                binding.edtCardYear.error = "Card cvv not valid"
+                binding.edtCardYear.error = "Card expiry Year not valid"
                 false
             }
             else -> {
@@ -158,16 +175,16 @@ class MainActivity : AppCompatActivity() {
                 false
             }
             cardMonthInput.length > 2 -> {
-                binding.edtCardMonth.error = "Card Year not valid"
+                binding.edtCardMonth.error = "Card expiry month not valid"
                 false
             }
 
             cardMonthInput.length < 2 -> {
-                binding.edtCardMonth.error = "Card cvv not valid"
+                binding.edtCardMonth.error = "Card expiry month not valid"
                 false
             }
             cardMonthInput.toInt() !in 1..12 -> {
-                binding.edtCardMonth.error = "Card month not valid month"
+                binding.edtCardMonth.error = "Card expiry  month not a valid month"
                 false
             }
             else -> {

@@ -7,22 +7,23 @@
     android:layout_height="match_parent"
     android:background="@color/card_background_color"
     tools:context=".MainActivity">
-
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btn_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/baseline_clear_white_24dp" />
     <LinearLayout
         android:id="@+id/ln_1"
+        android:layout_below="@id/btn_cancel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:orientation="vertical">
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/btn_cancel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/baseline_clear_white_24dp" />
-
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -143,12 +144,13 @@
                         android:layout_marginTop="8dp"
                         android:layout_marginBottom="8dp"
                         android:layout_weight="1"
-                        android:inputType = "textPassword"
                         android:gravity="center"
+                        android:inputType="textPassword"
 
                         android:textColor="@color/black"
                         android:textSize="18sp"
-                        android:textStyle="normal" />
+                        android:textStyle="normal"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/txt_fr_four_digit"
@@ -346,6 +348,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/save_this_card"
                     android:textColor="@color/black"
+                    android:layout_centerVertical="true"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
